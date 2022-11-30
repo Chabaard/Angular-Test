@@ -38,7 +38,7 @@ export class MyPopUpCustomComponent {
       // si msg n'existe pas l'idée est de renvoyer l'erreur directement aux dev
       // j'informe egalement le client que la page va recharger,
       // comme ça s'il veut save des data qui serait dans des inputs il pourrait le faire
-      window.confirm('La page va se recharger' + error)
+      window.confirm("La page va se recharger" + error)
       ? location.reload() : 'on attend le client voir ce qu il décide '
     }
   }
