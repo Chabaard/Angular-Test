@@ -1,0 +1,23 @@
+<div class="popup">
+  <div id="popup-msg" class="hidden is-ok"></div>
+  <h2 class="top"> Welcome to the Popup</h2>
+
+  <div class="middle">
+    <p>Il est possible de tenter  de créer un autre type d'erreur:</p>
+
+    <ol>
+      <li (click)="deleteDiv()">Cliquez sur cette phrase</li>
+      <li>Cliquez à nouveau sur le bouton Generer Something</li>
+    </ol>
+    <p>Cela va supprimer la div popup msg.</p>
+
+  </div>
+  <div class="bottom">
+    <button (click)="closeDialog()">
+      Close
+    </button>
+    <button (click)="generateSomething()">
+      Génerer something
+    </button>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+#popup-msg{
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 1vh;
+}
+.error{
+  color: darkred;
+  background-color: lightcoral;
+}
+.is-ok {
+  color: darkgreen;
+  background-color: lightgreen;
+}
+.popup{
+  &> .middle{
+    margin: 1rem 0;
+  }
+  &> .bottom{
+    display: flex;
+    justify-content: space-between;
+  }
+  &> .hidden{
+    display: none;
+  }
+}
+

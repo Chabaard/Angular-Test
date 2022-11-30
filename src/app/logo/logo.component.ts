@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MyPopUpCustomComponent } from '../my-pop-up-custom/my-pop-up-custom.component';
 
 @Component({
   selector: 'app-logo',
@@ -7,12 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogRef : MatDialog){}
 
+  openDialog(event: Event){
+    event.preventDefault();
+    try {
+      this.dialogRef.open(MyPopUpCustomComponent);
+    }catch(error){
+      window.alert(error);
+    }
+  }
   // function permettant de faire un resize de l'objet (logo)
-  // dès que l'event windows.resize est effectué
+  // dès que l'event windows.resize est exécuté
   onResize() {
-    const reSize = function () {
+    try {
       const logo: HTMLElement = document.getElementById("logo")!;
       // condition afin de savoir si la Width ou la Height est la plus grande
       // comme ça je règle la taille selon l'un ou l'autre
@@ -23,11 +33,11 @@ export class LogoComponent implements OnInit {
         logo.style.width = window.innerHeight/2+"px";
         logo.style.height = window.innerHeight/2+"px";
       }
-    };
-    // Je lance la function
-    reSize();
+    }catch(error){
+      window.alert(error)
+    }
   }
-  //Je resize à l'initialisation du component
+
   ngOnInit(): void {
     this.onResize();
   }

@@ -1,9 +1,9 @@
 <a (window:resize)="onResize()" id="logo" mywidth="60" myheight="60" href="https://twelv.fr/" target="_blank">
   <div class="logo-text">
       <div class="letter">
-          <div class="t t-horizontal"></div>
-          <div class="t t-vertical"></div>
+          <div (click)="openDialog($event)" class="t t-horizontal"></div>
+          <div (click)="openDialog($event)" class="t t-vertical"></div>
       </div>
-      <div class="point"></div>
+      <div class="point" (click)="openDialog($event)">Click</div>
   </div>
 </a>
